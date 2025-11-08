@@ -19,11 +19,14 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Environment
+# Environment variables
 .env
 .env.local
 
@@ -35,41 +38,26 @@ wheels/
 *~
 .DS_Store
 
-# Git
-.git/
-.gitignore
-
-# Docker
-Dockerfile
-docker-compose.yml
-.dockerignore
-
-# Documentation
-README.md
-*.md
-docs/
-
-# Tests
-tests/
-test_*.py
-*_test.py
-pytest.ini
-.pytest_cache/
-
 # Logs
 *.log
 logs/
 
-# Models (will be downloaded at runtime)
+# Models
 models/*.pt
 models/*.pth
+models/*.onnx
 
 # Temporary files
 tmp/
 temp/
 *.tmp
+/tmp/uploads/*
 
-# CI/CD
-.github/
-.gitlab-ci.yml
-.travis.yml
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Docker
+docker-compose.override.yml
