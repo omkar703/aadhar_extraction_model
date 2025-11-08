@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  aadhar-ocr-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aadhar-ocr-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_REPO_ID=arnabdhar/YOLOv8-nano-aadhar-card
+      - MODEL_FILENAME=model.pt
+      - MODEL_DIR=/app/models
+      - CONFIDENCE_THRESHOLD=0.5
+      - MAX_FILE_SIZE_MB=10
+      - UPLOAD_DIR=/tmp/uploads
+      - HOST=0.0.0.0
+      - PORT=8000
+      - WORKERS=4
+      - LOG_LEVEL=INFO
+    volumes:
+      # Persist model downloads
+      - model_data:/app/models
+      # Optional: Mount custom .env file
+      # - ./.env:/app/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  model_data:
+    driver: local

@@ -1,10 +1,25 @@
+# Web Framework
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
-ultralytics==8.1.0
-huggingface-hub==0.20.3
-pytesseract==0.3.10
-pillow==10.2.0
-opencv-python-headless==4.9.0.80
 python-multipart==0.0.6
-numpy==1.26.3
+
+# Pydantic settings
 pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# YOLO and Computer Vision
+ultralytics==8.1.0
+opencv-python-headless==4.9.0.80
+torch==2.1.2
+torchvision==0.16.2
+
+# OCR
+pytesseract==0.3.10
+Pillow==10.2.0
+
+# HuggingFace
+huggingface-hub==0.20.2
+
+# Utilities
+python-dotenv==1.0.0
+numpy==1.24.3
