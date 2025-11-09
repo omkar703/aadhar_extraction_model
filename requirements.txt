@@ -8,10 +8,10 @@ pydantic==2.5.3
 pydantic-settings==2.1.0
 
 # YOLO and Computer Vision
-ultralytics==8.1.0
-opencv-python-headless==4.9.0.80
-torch==2.1.2
-torchvision==0.16.2
+ultralytics>=8.1.0
+opencv-python-headless>=4.9.0.80
+torch>=2.0.0
+torchvision>=0.15.0
 
 # OCR
 pytesseract==0.3.10

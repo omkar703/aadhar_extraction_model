@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for Aadhaar Card OCR API
 
 # Stage 1: Builder stage
-FROM python:3.10-slim as builder
+FROM python:3.11-slim as builder
 
 # Set working directory
 WORKDIR /build
