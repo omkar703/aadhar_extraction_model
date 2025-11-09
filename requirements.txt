@@ -10,8 +10,9 @@ pydantic-settings==2.1.0
 # YOLO and Computer Vision
 ultralytics>=8.1.0
 opencv-python-headless>=4.9.0.80
-torch>=2.0.0
-torchvision>=0.15.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
 
 # OCR
 pytesseract==0.3.10
